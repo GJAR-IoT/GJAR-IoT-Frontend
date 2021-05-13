@@ -37,7 +37,7 @@ function App() {
                     <RouteTransition path="/about" exact={true} slideUp={0}>
                         <About />
                     </RouteTransition>
-                    <RouteTransition path="/room/:id" exact={true} slideUp={0}>
+                    <RouteTransition path="/room/:id" slideUp={0}>
                         <Main />
                     </RouteTransition>
                     <RouteTransition path="*" slideUp={0}>

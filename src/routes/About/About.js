@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./About.module.scss";
 import PcMockup from "../../assets/pc_mockup.png";
-import AboutUsItem from "./AboutUsItem/AboutUsItem";
+import AboutUsItem from "../../components/AboutUsItem/AboutUsItem";
 import moment from "moment";
 import { motion } from "framer-motion";
 

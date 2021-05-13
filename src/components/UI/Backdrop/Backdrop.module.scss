@@ -9,4 +9,7 @@
     background-color: $primary-white;
     z-index: 99;
     cursor: pointer;
+    &.Top {
+        z-index: 500;
+    }
 }

@@ -23,6 +23,12 @@ const configureUIStore = () => {
         SET_CURRENT_ROOM_INFO: (curstate, info) => {
             return { currentRoomInfo: info };
         },
+        OPEN_DOWNLOAD_DRAWER: () => {
+            return { downloadDrawerOpen: true };
+        },
+        CLOSE_DOWNLOAD_DRAWER: () => {
+            return { downloadDrawerOpen: false };
+        },
     };
 
     const initialState = {
@@ -30,6 +36,7 @@ const configureUIStore = () => {
         settingsSidebarOpen: false,
         canAnimate: false,
         currentRoomInfo: null,
+        downloadDrawerOpen: false,
     };
 
     initStore(actions, initialState);

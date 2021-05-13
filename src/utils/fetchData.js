@@ -18,6 +18,7 @@ export const fetchActualRoomData = (id, signal) => {
         fetch("https://iot.gjar-po.sk/api/v1/view", {
             method: "POST",
             headers: {
+                "Access-Control-Allow-Origin": "*",
                 "content-type": "application/json",
                 "cache-control": "no-cache",
             },
@@ -47,6 +48,7 @@ export const fetchDataFromTimeInterval = (timeFrom, timeTo, roomId, signal) => {
         fetch("https://iot.gjar-po.sk/api/v1/view", {
             method: "POST",
             headers: {
+                "Access-Control-Allow-Origin": "*",
                 "content-type": "application/json",
                 "cache-control": "no-cache",
             },
