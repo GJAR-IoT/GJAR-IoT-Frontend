@@ -12,7 +12,7 @@ const aboutUsInfo = [
         text: `Pracoval som na webstránke. Mám ${moment().diff(
             "2002-01-10",
             "years"
-        )} rokov. Navštevujem Gymnázium Jána Adama Raymana v Prešove a som žiakom 3.D triedy.`,
+        )} rokov. Som absolventom Gymnázia Jána Adama Raymana. Momentálne študujem odbor Programovanie a vývoj aplikácii na MUNI v Brne.`,
     },
     {
         name: "Maroš",
