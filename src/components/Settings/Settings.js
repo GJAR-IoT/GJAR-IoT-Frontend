@@ -15,11 +15,16 @@ export default function Settings() {
     const { shouldDisplay, locationOnRoom } = useResponsiveDesign();
     const { pathname } = useLocation();
 
-    console.log(
+    const roomId =
         matchPath(pathname, {
             path: "/room/:id",
-        })
-    );
+        }) &&
+        matchPath(pathname, {
+            path: "/room/:id",
+        }).params &&
+        matchPath(pathname, {
+            path: "/room/:id",
+        }).params.id;
 
     return (
         <SideBar position="right" black isVisible={(shouldDisplay && locationOnRoom) || store.settingsSidebarOpen}>
@@ -28,32 +33,13 @@ export default function Settings() {
             <CustomTimePicker />
             <CustomDatePicker />
             <div className={classes.ButtonWrapper}>
-                <a
-                    href={`https://iot.gjar-po.sk/api/export/${
-                        matchPath(pathname, {
-                            path: "/room/:id",
-                        }).params.id
-                    }/${moment(store.activeDate).format("YYYY-MM-DD")}`}
-                >
-                    <Button className="full-width">Stiahni dáta zo dňa {moment(store.activeDate).format("DD. MMMM")}</Button>
+                <a href={`https://iot.gjar-po.sk/api/export/${roomId}/${moment(store.activeDate).format("YYYY-MM-DD")}`}>
+                    <Button className="full-width">Stiahni dáta zo dňa {moment(store.activeDate).format("D.M")}</Button>
                 </a>
             </div>
             <div className={classes.ButtonWrapper}>
-                <a
-                    href={`https://iot.gjar-po.sk/api/export/${
-                        matchPath(pathname, {
-                            path: "/room/:id",
-                        }).params.id
-                    }`}
-                >
-                    <Button className="full-width">
-                        Stiahni všetky dáta z miestnosti
-                        {
-                            matchPath(pathname, {
-                                path: "/room/:id",
-                            }).params.id
-                        }
-                    </Button>
+                <a href={`https://iot.gjar-po.sk/api/export/${roomId}`}>
+                    <Button className="full-width">Stiahni všetky dáta z miestnosti {roomId}</Button>
                 </a>
             </div>
         </SideBar>

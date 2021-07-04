@@ -44,10 +44,12 @@ const CustomSlider = ({ change, defaultvalue }) => {
         const timeout = setTimeout(() => {
             change(newInterval);
         }, 500);
+
         return () => {
             clearTimeout(timeout);
         };
-    }, [newInterval, change]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [newInterval]);
 
     return (
         <div className={classes.SliderWrapper}>
